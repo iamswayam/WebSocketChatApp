@@ -29,6 +29,16 @@ ALLOWED_HOSTS = []
 
 ASGI_APPLICATION = 'mysite.asgi.application'
 
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            # "hosts": [('127.0.0.1', 6379)],
+            "hosts": [('redis://:QCUH4Sk6n55v9SpwS7cS1P5jKdlUF11R@redis-18343.c275.us-east-1-4.ec2.cloud.redislabs.com:18343')]
+        },
+    },
+}
+
 # Application definition
 
 INSTALLED_APPS = [
